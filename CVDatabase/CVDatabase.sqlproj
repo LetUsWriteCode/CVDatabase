@@ -8,13 +8,13 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{1d5c421c-2d06-4947-92ea-f1cd8f9f202b}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql140DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
     <RootNamespace>CVDatabase</RootNamespace>
     <AssemblyName>CVDatabase</AssemblyName>
-    <ModelCollation>1033, CI</ModelCollation>
+    <ModelCollation>1033,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -23,6 +23,8 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Latin1_General_CI_AS</DefaultCollation>
+    <Recovery>SIMPLE</Recovery>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -57,5 +59,38 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Lookup\" />
+    <Folder Include="Lookup\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="Scripts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\SubjectContact.sql" />
+    <Build Include="dbo\Tables\SubjectAddress.sql" />
+    <Build Include="dbo\Tables\Subject.sql" />
+    <Build Include="dbo\Tables\Statement.sql" />
+    <Build Include="dbo\Tables\RoleResponsibility.sql" />
+    <Build Include="dbo\Tables\RoleAchievement.sql" />
+    <Build Include="dbo\Tables\Role.sql" />
+    <Build Include="dbo\Tables\ResponsibilitySkillSet.sql" />
+    <Build Include="dbo\Tables\Responsibility.sql" />
+    <Build Include="dbo\Tables\EmployerLogo.sql" />
+    <Build Include="dbo\Tables\Employer.sql" />
+    <Build Include="dbo\Tables\Address.sql" />
+    <Build Include="dbo\Tables\Achievement.sql" />
+    <Build Include="Lookup\Tables\ContactMethod.sql" />
+    <Build Include="Lookup\Tables\SkillSet.sql" />
+    <Build Include="Lookup\Tables\StatementType.sql" />
+    <Build Include="Security\Lookup.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\Lookup.SkillSet.sql" />
+    <None Include="Scripts\Lookup.ContactMethod.sql" />
+    <None Include="Scripts\Lookup.StatementType.sql" />
   </ItemGroup>
 </Project>
