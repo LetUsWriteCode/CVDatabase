@@ -65,6 +65,7 @@
     <Folder Include="Lookup\Tables\" />
     <Folder Include="Security\" />
     <Folder Include="Scripts" />
+    <Folder Include="dbo\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\SubjectContact.sql" />
@@ -84,6 +85,11 @@
     <Build Include="Lookup\Tables\SkillSet.sql" />
     <Build Include="Lookup\Tables\StatementType.sql" />
     <Build Include="Security\Lookup.sql" />
+    <Build Include="Lookup\Tables\QualificationType.sql" />
+    <Build Include="dbo\Tables\SubjectQualification.sql" />
+    <Build Include="dbo\Stored Procedures\uspAddPerson.sql" />
+    <Build Include="dbo\Stored Procedures\uspAddEmployerLogo.sql" />
+    <Build Include="dbo\Stored Procedures\uspAddEmployer.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\PostDeployment.sql" />
@@ -92,5 +98,6 @@
     <None Include="Scripts\Lookup.SkillSet.sql" />
     <None Include="Scripts\Lookup.ContactMethod.sql" />
     <None Include="Scripts\Lookup.StatementType.sql" />
+    <None Include="Scripts\Lookup.QualificationType.sql" />
   </ItemGroup>
 </Project>

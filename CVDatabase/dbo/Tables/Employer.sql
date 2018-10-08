@@ -6,3 +6,10 @@
     CONSTRAINT [PK_Employer_EmployerID] PRIMARY KEY CLUSTERED ([EmployerID] ASC)
 );
 
+
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [UIX_Employer_CompanyName]
+    ON [dbo].[Employer]([CompanyName] ASC);
+

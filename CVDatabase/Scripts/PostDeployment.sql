@@ -12,3 +12,4 @@ Post-Deployment Script Template
 :r .\Lookup.SkillSet.sql
 :r .\Lookup.ContactMethod.sql
 :r .\Lookup.StatementType.sql
+:r .\Lookup.QualificationType.sql
